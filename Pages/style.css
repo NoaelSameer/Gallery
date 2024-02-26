@@ -1,0 +1,25 @@
+body{
+    margin: 0 0 0 0;
+    background-color: #D3D3D3;
+}
+nav{
+    /* padding-bottom:6vh; */
+    background-color: gray;
+    height: 7vh;
+    image-height: 50vh;
+}
+nav img{
+    width: 6vw;
+    height: 7vh;
+    /* padding-bottom: 1vh; */
+}
+.Photos{
+    display: grid;
+    grid-template-columns: repeat(2, 45vw);
+    grid-template-rows: repeat(3, 30vw);
+
+}
+.Photos img{
+    width: 50vw;
+    height: 40vh;
+}
