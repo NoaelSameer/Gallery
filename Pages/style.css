@@ -1,25 +1,36 @@
-body{
+body {
     margin: 0 0 0 0;
     background-color: #D3D3D3;
-}
-nav{
-    /* padding-bottom:6vh; */
+  }
+  
+  nav {
     background-color: gray;
     height: 7vh;
-    image-height: 50vh;
-}
-nav img{
+  }
+  
+  nav img {
     width: 6vw;
     height: 7vh;
-    /* padding-bottom: 1vh; */
-}
-.Photos{
+  }
+  
+  .Photos {
     display: grid;
-    grid-template-columns: repeat(2, 45vw);
-    grid-template-rows: repeat(3, 30vw);
-
-}
-.Photos img{
-    width: 50vw;
+    grid-template-columns: repeat(2, 48vw);
+    grid-template-rows: repeat(3, 30vh);
+    margin: 5 5 5 5;
+  }
+  
+  .Photos img {
+    margin-top: 1vh;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    width: 47vw;
     height: 40vh;
+  }
+
+  .Budgies img {
+    display: none;
+}
+.Budgies img.active {
+    display: block;
 }
