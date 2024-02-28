@@ -1,30 +1,111 @@
-let slideIndex = 0;
+function Larger(Classer) {
+    let index = 0;
+    let slides;
 
-function Larger() {
-    const images = document.querySelectorAll('.Budgies img');
-    images.forEach(image => {
-        // Enlarge the image
-        image.style.height = "80vh";
-        image.style.width = "80vw";
+    // Function that moves slides, by adding or subtracting
+    function SlideMover(n) {
+        Mover(index + n);
+    }
+
+    // Moves slides, by removing the class, finds the new index, and then makes the new image visible
+    function Mover(n) {
+        slides[index].classList.remove("active");
+        index = (n + slides.length) % slides.length;
+        slides[index].classList.add("active");
+    }
+
+    // gets slide
+    slides = document.querySelectorAll("." + Classer + " .slide");
+
+    // Disable hover for images
+    let photosDivs = document.querySelectorAll(".Photos div");
+    for (let i = 0; i < photosDivs.length; i++) {
+        let div = photosDivs[i];
+        if (i !== index) {
+            // Disable hover and click on div
+            div.style.pointerEvents = "none";
         
-        // Center the image
-        image.style.position = "fixed";
-        image.style.top = "50%";
-        image.style.left = "50%";
-        image.style.transform = "translate(-50%, -50%)";
-        
-        // Darken the outside
-        document.body.style.overflow = "hidden"; // Prevent scrolling
-        document.body.style.backgroundColor = "rgba(0, 0, 0, 0.7)";
-        
-        // Add transition for smooth animation
-        image.style.transition = "2s";
-    });
+            // Darken the image
+            let image = div.querySelector("img");
+            image.style.filter = "brightness(50%)";
+        } else {
+            // Set zIndex to 1 for the active image
+            let image = div.querySelector("img");
+            image.style.zIndex = "1";
+        }
+    }
+
+
+    // Creates prevous button
+    let prevButton = document.createElement("p");
+    prevButton.className = "prev";
+    prevButton.innerHTML = "&#10094;";
+    prevButton.onclick = function() {
+        SlideMover(-1);
+    };
+    document.body.appendChild(prevButton);
+
+    // creates next button
+    let nextButton = document.createElement("p");
+    nextButton.className = "next";
+    nextButton.innerHTML = "&#10095;";
+    nextButton.onclick = function() {
+        SlideMover(1);
+    };
+    document.body.appendChild(nextButton);
+
+    // Creates close button
+    let Closer = document.createElement("button");
+    Closer.className = "Closer";
+    Closer.innerHTML = "Close";
+    Closer.onclick = function() {
+        Closet(Classer);
+    };
+    document.body.appendChild(Closer);
+
+    // Add Mainer class to slides, making it biggg
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].classList.add("Mainer");
+    }
 }
+function Closet(Classer) {
+    // Remove previous button
+    let prevButton = document.querySelector(".prev");
+    if (prevButton) {
+        prevButton.remove();
+    }
 
-function Mover(n, className) {
-    const slides = document.querySelectorAll(className);
-    slideIndex = (slideIndex + n + slides.length) % slides.length;
-    slides.forEach(slide => slide.classList.remove('active'));
-    slides[slideIndex].classList.add('active');
+    // Remove next button
+    let nextButton = document.querySelector(".next");
+    if (nextButton) {
+        nextButton.remove();
+    }
+
+    // Remove close button
+    let closeButton = document.querySelector(".Closer");
+    if (closeButton) {
+        closeButton.remove();
+    }
+
+    // Remove "Mainer" class from slides
+    let slides = document.querySelectorAll("." + Classer + " .slide");
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].classList.remove("Mainer");
+    }
+
+    // renable hover
+    let photosDivs = document.querySelectorAll(".Photos div");
+    for (let i = 0; i < photosDivs.length; i++) {
+        photosDivs[i].style.pointerEvents = "";
+    }
+
+    // emables clickability
+    let photosImages = document.querySelectorAll(".Photos img");
+    for (let i = 0; i < photosImages.length; i++) {
+        let image = photosImages[i];
+        // Enables hover
+        image.style.pointerEvents = "";
+        // Background remover
+        image.style.filter = "";
+    }
 }

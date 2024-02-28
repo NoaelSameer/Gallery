@@ -5,23 +5,103 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Add your CSS styles here */
+    </style>
 </head>
 <body>
     <nav>
         <img src="/Images/General/Logo.png" alt="">
     </nav>
     <div class="Photos">
-        <div class="Budgies">
-            <img src="/Images/Budgies/Budgie1.jpg" alt="" class="active" onclick="Larger(event)">
-            <img src="/Images/Budgies/Budgie2.jpg" alt="">
-            <img src="/Images/Budgies/Budgie3.jpg" alt="">
-            <img src="/Images/Budgies/Budgie4.jpg" alt="">
+        <div onclick="Larger('Budgies')" class="Budgies slider">
+            <div class="Budgies slide active">
+                <img src="/Images/Budgies/Budgie1.jpg" alt="">
+            </div>
+            <div class="Budgies slide">
+                <img src="/Images/Budgies/Budgie2.jpg" alt="">
+            </div>
+            <div class="Budgies slide">
+                <img src="/Images/Budgies/Budgie3.jpg" alt="">
+            </div>
+            <div class="Budgies slide">
+                <img src="/Images/Budgies/Budgie4.jpg" alt="">
+            </div>
         </div>
-        <div>
-            <a class="prev" onclick="Mover(-1, '.Budgies img')">&#10094;</a>
-            <a class="next" onclick="Mover(1, '.Budgies img')">&#10095;</a>
+        <div onclick="Larger('Cockatiels')" class="Cockatiels slider">
+            <div class="Cockatiel slide active">
+                <img src="/Images/Cockatiels/Cockatiel1.jpg" alt="">
+            </div>
+            <div class="Cockatiel slide">
+                <img src="/Images/Cockatiels/Cockatiel2.jpg" alt="">
+            </div>
+            <div class="Cockatiel slide">
+                <img src="/Images/Cockatiels/Cockatiel3.jpg" alt="">
+            </div>
+            <div class="Cockatiel slide">
+                <img src="/Images/Cockatiels/Cockatiel4.jpg" alt="">
+            </div>
         </div>
+        <div onclick="Larger('Cockatoo')" class="Cockatoo slider">
+            <div class="Cockatoo slide active">
+                <img src="/Images/Cockatoo/Cockatoo1.jpg" alt="">
+            </div>
+            <div class="Cockatoo slide">
+                <img src="/Images/Cockatoo/Cockatoo2.jpg" alt">
+            </div>
+            <div class="Cockatoo slide">
+                <img src="/Images/Cockatoo/Cockatoo3.jpg" alt">
+            </div>
+            <div class="Cockatoo slide">
+                <img src="/Images/Cockatoo/Cockatoo4.jpg" alt">
+            </div>
+        </div>
+        <div onclick="Larger('Macaws')" class="Macaws slider">
+            <div class="Macaw slide active">
+                <img src="/Images/Macaws/Macaws1.jpg" alt="">
+            </div>
+            <div class="Macaw slide">
+                <img src="/Images/Macaws/Macaws2.jpg" alt="">
+            </div>
+            <div class="Macaw slide">
+                <img src="/Images/Macaws/Macaws3.jpg" alt="">
+            </div>
+            <div class="Macaw slide">
+                <img src="/Images/Macaws/Macaws4.jpg" alt="">
+            </div>
+        </div>
+        <div onclick="Larger('Finches')" class="Finches slider">
+            <div class="Finch slide active">
+                <img src="/Images/Finches/Finches1.jpg" alt="">
+            </div>
+            <div class="Finch slide">
+                <img src="/Images/Finches/Finches2.jpg" alt="">
+            </div>
+            <div class="Finch slide">
+                <img src="/Images/Finches/Finches3.jpg" alt="">
+            </div>
+            <div class="Finch slide">
+                <img src="/Images/Finches/Finches4.jpg" alt="">
+            </div>
+        </div>
+        <div onclick="Larger('LoveBirds')" class="LoveBirds slider">
+            <div class="LoveBirds slide active">
+                <img src="/Images/LoveBirds/LoveBird2.jpg" alt="">
+            </div>
+            <div class="LoveBirds slide">
+                <img src="/Images/LoveBirds/LoveBird1.jpg" alt="">
+            </div>
+            <div class="LoveBirds slide">
+                <img src="/Images/LoveBirds/LoveBird3.jpg" alt="">
+            </div>
+            <div class="LoveBirds slide">
+                <img src="/Images/LoveBirds/LoveBird4.jpg" alt="">
+            </div>
+        </div>
+        
+
     </div>
+
     <script src="Gallery.js"></script>
 </body>
 </html>
