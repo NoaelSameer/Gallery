@@ -57,6 +57,7 @@ nav img{
   top: 30vh;
   /* transform: translateY(-90%); */
   font-size:7vw;
+  color:white;
 }
 .next{
     position: absolute;
@@ -64,6 +65,7 @@ nav img{
     top: 30vh;
     /* transform: translateY(-90%); */
     font-size: 7vw;
+    color: white;
 }
 
 
